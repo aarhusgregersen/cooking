@@ -1,0 +1,68 @@
+namespace Usergroups
+	Admins before_action :require_login only: [] (see controller filters)
+		first_name:string (present)
+		last_name:string
+		email:string (unique, present)
+	Users 
+		first_name:string (present, char 2-16)
+		last_name:string
+		email:string (unique, present)
+
+delegate :birthday, :gender, :city, to: :AuthorDetails (index?)
+after_initialize do
+    self.build_detail if detail.nil?
+end
+has_many recipes dependent: :destroy
+has_many blog_posts dependent: :destroy
+has_one AuthorDetails dependent: :destroy
+AuthorDetails
+description:string
+city:string
+birthday:date
+gender:string
+belongs_to Users
+
+blog_posts
+title:string (present, char 10-60)
+post:textfield (present)
+time:date (genereres automatisk)
+belongs_to Users
+
+ 
+recipes
+Title:string
+picture:image
+time:datetime
+description:string
+instructions:string
+ingredients:string
+belongs_to user
+
+
+http://stackoverflow.com/questions/27387842/rails-4-how-to-match-routes-in-namespace
+http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
+
+
+Tasks:
+- Add devise gem
+- before_action authenticate_xxx! with devise on all except index and show. Should be added to recipes and blog posts
+- add an admin action in the authors controller that redirects the user to root unless the current author are admin
+- Set up before actions in author controller so only admins can delete 
+- Reduce permissions for default users to only allow show and create
+- Display a settings page for users (/1/edit) 
+- Add forms to 'form' pages (partial templates) (class and control)
+- Make destroy function on author page work (broke because of password setup and table relations)
+- Set before action that checks if user is logged in, on recipe
+- Style front(blog_posts) page
+- Style 'show user' site
+- Add friendlyID gem, that makes URL-titling easier
+- Make sure newest post is on top
+- Add an admin through seeds 
+- Seed database
+
+Future tasks:
+- Add an admin namespace
+- Add a picture row in database for recipe 
+- Create a related table authorDetails
+- Add to author.rb has_one author detail with destroy dependency
+- 
