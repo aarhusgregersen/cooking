@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Custom gems
 gem 'devise'
+gem 'bootstrap-sass'
 # gem 'friendlyID'
 
 # Use Unicorn as the app server

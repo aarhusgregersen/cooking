@@ -44,14 +44,10 @@ http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
 
 
 Tasks:
-- Add devise gem
-- before_action authenticate_xxx! with devise on all except index and show. Should be added to recipes and blog posts
-- add an admin action in the authors controller that redirects the user to root unless the current author are admin
-- Set up before actions in author controller so only admins can delete 
-- Reduce permissions for default users to only allow show and create
-- Display a settings page for users (/1/edit) 
-- Add forms to 'form' pages (partial templates) (class and control)
-- Make destroy function on author page work (broke because of password setup and table relations)
+- Make a helper for notification classes in bootstrap style
+- Hide show/edit/destroy buttons for incorrect users 
+- Create recipe scaffold controller
+- Edit and setup views for recipes
 - Set before action that checks if user is logged in, on recipe
 - Style front(blog_posts) page
 - Style 'show user' site
@@ -59,10 +55,8 @@ Tasks:
 - Make sure newest post is on top
 - Add an admin through seeds 
 - Seed database
-
-Future tasks:
 - Add an admin namespace
 - Add a picture row in database for recipe 
 - Create a related table authorDetails
 - Add to author.rb has_one author detail with destroy dependency
-- 
+

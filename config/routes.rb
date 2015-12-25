@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
-  devise_for :users
-
-
+  devise_for :admins
+  root 'blog_posts#index'
+  devise_for  :users
+  resources   :blog_posts
 
 
   # The priority is based upon order of creation: first created -> highest priority.
