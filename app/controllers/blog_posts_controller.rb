@@ -1,11 +1,12 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+
 
   # GET /blog_posts
   # GET /blog_posts.json
   def index
-    @blog_posts = BlogPost.all
+    @blog_posts = BlogPost.all.order(created_at: :desc)
   end
 
   # GET /blog_posts/1
@@ -29,7 +30,7 @@ class BlogPostsController < ApplicationController
 
     respond_to do |format|
       if @blog_post.save
-        format.html { redirect_to @blog_post, flash: { success: 'Blog post was successfully created.' } }
+        format.html { redirect_to @blog_post, flash: { success: 'Blogindlæg blev oprettet!' }}
         format.json { render :show, status: :created, location: @blog_post }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class BlogPostsController < ApplicationController
   def update
     respond_to do |format|
       if @blog_post.update(blog_post_params)
-        format.html { redirect_to @blog_post, notice: 'Blog post was successfully updated.' }
+        format.html { redirect_to @blog_post, flash: { success: 'Blogindlæg blev opdateret!.'}}
         format.json { render :show, status: :ok, location: @blog_post }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class BlogPostsController < ApplicationController
   def destroy
     @blog_post.destroy
     respond_to do |format|
-      format.html { redirect_to blog_posts_url, notice: 'Blog post was successfully destroyed.' }
+      format.html { redirect_to blog_posts_url, flash: { info: 'Blogindlæg blev slettet.'}}
       format.json { head :no_content }
     end
   end

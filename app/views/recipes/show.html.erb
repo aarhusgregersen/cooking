@@ -1,0 +1,22 @@
+
+
+<h1><%= link_to 'Opskrifter >', recipes_path  %> <%= @recipe.title %></h1>
+
+	<%= image_tag @recipe.recipe_image.url :medium %>
+
+
+
+<br>
+
+<h3>Beskrivelse</h3>
+  <p><%= @recipe.description %></p>
+<br>
+<h3>Ingredienser</h3>
+  <p><%= @recipe.ingredients %></p>
+<br>
+<h3>Fremgangsmåde</h3>
+  <p><%= @recipe.instructions %></p>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %>
+

@@ -26,7 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Custom gems
 gem 'devise'
 gem 'bootstrap-sass'
+# gem 'lightbox-bootstrap-rails'
+gem 'lightbox2-rails'
 # gem 'friendlyID'
+gem 'paperclip'
+gem 'rmagick'
+gem 'mini_magick'
+gem 'haml'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -53,5 +60,6 @@ end
 
 group :production do
 	gem 'pg'
+  gem 'rails_12factor'
 end
 

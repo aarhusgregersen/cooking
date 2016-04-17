@@ -1,23 +1,12 @@
-<p id="notice"><%= notice %></p>
 
 <%= render 'carousel' %>
 
-<table class="blogpost">
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blog_posts.each do |blog_post| %>
-      <tr>
-        <th><%= link_to blog_post.title, blog_post %></th>
-        <% if admin_signed_in? %>
-          <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
-          <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <% @blog_posts.each do |blog_post| %>
+  <div class="col-sm-12">
+    <h2><%= link_to blog_post.title, blog_post %></h2>
+    <p><%= truncate(blog_post.post, :length => 1200) %></p>
+    <% #render 'layouts/admin' %>
+    </div>
+  <% end %>
+</div>

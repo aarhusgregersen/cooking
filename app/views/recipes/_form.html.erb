@@ -1,0 +1,41 @@
+<% if @recipe.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+  <ul>
+    <% @recipe.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for(@recipe) do |f| %>
+<div class="container">
+  <div class="actions">
+      <%= f.label "Upload billede af retten" %>
+      <%= f.file_field :recipe_image %>
+
+      <% if user_signed_in? %>
+      <%= button_to 'Slet billede?', '#', class:"btn btn-warning" %>
+      <% end %>
+      <br>
+
+
+      <%= f.label :title %> <br>
+      <%= f.text_field :title %>
+      <br>
+      <%= f.label "Beskrivelse" %> <br>
+      <%= f.text_field :description%>
+      <br>
+      <%= f.label "Ingredienser" %> <br>
+      <%= f.text_field :ingredients%>
+      <br>
+      <%= f.label :instructions, "Fremgangsmåde" %> <br>
+      <%= f.text_field :instructions%>
+
+    <br>
+    <br>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+</div>
+<% end %>

@@ -1,9 +1,9 @@
-namespace Usergroups
+namespace Admin
 	Admins before_action :require_login only: [] (see controller filters)
 		first_name:string (present)
 		last_name:string
 		email:string (unique, present)
-	Users 
+	Users
 		first_name:string (present, char 2-16)
 		last_name:string
 		email:string (unique, present)
@@ -32,10 +32,10 @@ belongs_to Users
 recipes
 Title:string
 picture:image
-time:datetime
 description:string
 instructions:string
 ingredients:string
+
 belongs_to user
 
 
@@ -44,19 +44,36 @@ http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
 
 
 Tasks:
-- Make a helper for notification classes in bootstrap style
-- Hide show/edit/destroy buttons for incorrect users 
-- Create recipe scaffold controller
 - Edit and setup views for recipes
-- Set before action that checks if user is logged in, on recipe
+	- Add modal/lightbox popup for images
+		- It is somehow lacking the id of the item it is 'lightboxing'
+- Make it possible to delete images
+	- Set up destroy_image action on edit page
+	- Make destroy image button work
+- Add an admin namespace
+	- See devise guide for how to add admins.
+- Add an admin through seeds
+- Seed database
+	- Might use faker gem for this
+- Create a related table authorDetails
 - Style front(blog_posts) page
 - Style 'show user' site
-- Add friendlyID gem, that makes URL-titling easier
-- Make sure newest post is on top
-- Add an admin through seeds 
-- Seed database
-- Add an admin namespace
-- Add a picture row in database for recipe 
-- Create a related table authorDetails
 - Add to author.rb has_one author detail with destroy dependency
+- Remove edit link in title for blog and recipe
+	- Check for admin status to allow edits
+	- if blog post / recipe OWNED BY current_user = allow edit
+- Turn code into HAML
+- Add bootstrap modal as helper
+	- If I'm too dumb to do that, add as partial
+- Instead of not showing "new blog / recipe" when not logged in do:
+	- Show greyed out links
+	- use balloon.css to show hover notification that says to register
+- Set up omniauth login for facebook
 
+
+
+Goals:
+- Have users and admins user groups
+	- People can NOT sign up as admins
+	- Both have to be authenticated and can be remembered (cookie)
+-

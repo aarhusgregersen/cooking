@@ -14,10 +14,43 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "lightbox";
+
+#carousel-frontpage {
+		margin-bottom: 20px;
+	}
+
+button.btn a {
+	color: #000 !important;
+}
 
 @media only screen and (min-width: 1200px) {
 	.carousel-inner {
 		height: 400px;
-		background-size: cover;
+
+		.item {
+			height: 100%;
+
+			img {
+				height: auto;
+				width: 100%;
+			}
+		}
+	}
+	#carousel-frontpage {
+		margin-bottom: 100px;
 	}
 }
+
+.carousel-control.left,
+.carousel-control.right {
+    background-image: none
+}
+
+.picture {
+	width: 24%;
+	display: flex-inline;
+	padding: 0 40px;
+}
+
+
