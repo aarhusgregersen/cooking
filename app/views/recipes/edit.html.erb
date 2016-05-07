@@ -4,3 +4,5 @@
 
 <%= link_to 'Show', @recipe %> |
 <%= link_to 'Back', recipes_path %>
+
+<%= button_to 'Delete?', @recipe, :method => :delete, data: {:confirm => "Er du sikker på du vil slette opskriften?"} %>

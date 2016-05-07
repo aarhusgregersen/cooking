@@ -69,7 +69,7 @@ Tasks:
 	- Show greyed out links
 	- use balloon.css to show hover notification that says to register
 - Set up omniauth login for facebook
-
+- Set up up/down vote system like on youtube (thumbs up/down icons)
 
 
 Goals:
