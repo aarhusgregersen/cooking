@@ -50,8 +50,8 @@ Tasks:
 - Make it possible to delete images
 	- Set up destroy_image action on edit page
 	- Make destroy image button work
-- Add an admin namespace
-	- See devise guide for how to add admins.
+- Add an admin √
+	- See devise guide for how to add admins. √
 - Add an admin through seeds
 - Seed database
 	- Might use faker gem for this
