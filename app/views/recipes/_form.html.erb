@@ -17,7 +17,8 @@
       <br>
 
       <% if current_user.admin? %>
-      <%= button_to 'Slet billede?', '#', class:"btn btn-warning" %>
+      <%= f.label "Slet billede?" %>
+      <%= f.check_box :image_delete %>
       <% end %>
 
       <div class="field">

@@ -6,10 +6,6 @@ http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 
 -- Tasks:
 - Make it possible to delete images
-- Seed database with faker gem
-	- A few posts
-	- A few starting recipes
-	- Admin user
 - Style 'show user' site
 - Remove edit link in title for blog and recipe
 	- Check for admin status to allow edits
@@ -50,3 +46,7 @@ http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 - Add an admin through seeds √
 - Create a related table Profile (Effectively profiles for devise) √
 - Style front(blog_posts) page √
+- Seed database with faker gem √
+	- A few posts √
+	- A few starting recipes √
+	- Admin user √
