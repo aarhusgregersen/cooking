@@ -1,68 +1,68 @@
+# app/helpers/carousel_helper.rb
+
 module CarouselHelper
+  def carousel_for(images)
+    Carousel.new(self, images).html
+  end
 
-	def carousel_for(images)
-		Carousel.new(self,images).html
-	end
+  class Carousel
+    def initialize(view, images)
+      @view, @images = view, images
+      @uid = SecureRandom.hex(6)
+    end
 
-	class Carousel
-		def initialize(view, images)
-			@view, @images = view, images
-			@uid = SecureRandom.hex(6)
-		end
+    def html
+      content = safe_join([indicators, slides, controls])
+      content_tag(:div, content, id: uid, class: 'carousel slide')
+    end
 
-		attr_accessor :uid
+    private
 
-		def html
-			content = view.safe_join([indicators, slides, controls])
-			view.content_tag(:div, content, class: 'carousel slide')
-		end
+    attr_accessor :view, :images, :uid
+    delegate :link_to, :content_tag, :image_tag, :safe_join, to: :view
 
-		private
+    def indicators
+      items = images.count.times.map { |index| indicator_tag(index) }
+      content_tag(:ol, safe_join(items), class: 'carousel-indicators')
+    end
 
-		attr_accessor :view, :images
+    def indicator_tag(index)
+      options = {
+        class: (index.zero? ? 'active' : ''),
+        data: {
+          target: uid,
+          slide_to: index
+        }
+      }
 
-		def indicators
-			items = images.count.times.map { |index| indicator_tag(index)}
-			content_tag(:ol, safe_join(items), class: 'carousel-indicators')
-		end
+      content_tag(:li, '', options)
+    end
 
-		def indicator_tag(index)
-			options = {
-				class: (index.zero? ? 'active' : ''),
-				data: {
-					target: uid,
-					slide_to: index
-				}
-			}
+    def slides
+      items = images.map.with_index { |image, index| slide_tag(image, index.zero?) }
+      content_tag(:div, safe_join(items), class: 'carousel-inner')
+    end
 
-			content_tag(:li, '', options)
-		end
+    def slide_tag(image, is_active)
+      options = {
+        class: (is_active ? 'item active' : 'item'),
+      }
 
-		def slides
-			items = images.map.with_index { |image, index| slide_tag(image, index.zero?) }
-			content_tag(:div, safe_join(items), class: 'carousel-inner')
-		end
+      content_tag(:div, image_tag(image), options)
+    end
 
-		def slide_tag(image, is_active)
-			options = {
-				class: (is_active ? 'item active' : 'item'),
-			}
+    def controls
+      safe_join([control_tag('left'), control_tag('right')])
+    end
 
-			content_tag(:div, image_tag(image), options)
-		end
+    def control_tag(direction)
+      options = {
+        class: "#{direction} carousel-control",
+        data: { slide: direction == 'left' ? 'prev' : 'next' }
+      }
 
-		def controls
-			safe_join([control_tag('left'), content_tag('right')])
-		end
-
-		def control_tag(direction)
-			options = {
-				class: "#{direction} carousel-control",
-					data: { slide: direction == 'left' ? 'prev' : 'next'}
-			}
-
-			icon = content_tag(:i, nil, class: "glyphicon glyphicon-chevron-#{direction}")
-			control = link_to(icon, "##{uid}", options)
-		end
-	end
+      icon = content_tag(:i, '', class: "glyphicon glyphicon-chevron-#{direction}")
+      control = link_to(icon, "##{uid}", options)
+    end
+  end
 end
