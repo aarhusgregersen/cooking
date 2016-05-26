@@ -1,6 +1,7 @@
 http://stackoverflow.com/questions/27387842/rails-4-how-to-match-routes-in-namespace
 http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
 http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
+http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 
 
 -- Tasks:
@@ -20,6 +21,9 @@ http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
 - Set up up/down vote system like on youtube (thumbs up/down icons)
 - Add reference to blog posts
 - Add reference to recipes
+- Add likes to blog posts
+- Add likes to recipes
+- Set up a "sort by best" view for recipes that sort by likes
 
 
 -- Bugs:

@@ -1,3 +1,8 @@
+<% if @recipes.count == 0 %>
+	<h1>Opskrifter burde findes her</h1>
+	<p>Men det ser desværre ikke ud til at der er blevet oprettet nogen endnu.</p>
+	<p>Vil du <%= link_to 'oprette den første?', new_recipe_path %> </p>
+<% else %>
 <div class="row">
 	<% @recipes.each do |recipe| %>
 	<div class="col-sm-6 col-md-3">
@@ -9,3 +14,4 @@
 	</div>
 	<% end %>
 </div>
+<% end %>

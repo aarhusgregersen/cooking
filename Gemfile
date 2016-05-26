@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Custom gems
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'lightbox2-rails'
 gem 'paperclip'
 gem 'rmagick'

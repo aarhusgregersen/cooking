@@ -1,5 +1,9 @@
 
-<h2> <%= @blog_post.title  %> </h2>
-<p> <%= @blog_post.post %> </p>
+	<h2> <%= @blog_post.title  %> </h2>
+	<i class="fa fa-thumbs-o-down fa-2x" id="BlogDownvote" ></i>
+	<i class="fa fa-thumbs-o-up fa-2x" id="BlogUpvote" ></i>
+	<br>
+	<p> <%= @blog_post.post %> </p>
 
-<%= link_to "Tilbage til forsiden", root_url  %>
+	<%= link_to "Tilbage til forsiden", root_url  %>
+

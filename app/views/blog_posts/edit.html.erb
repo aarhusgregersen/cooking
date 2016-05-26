@@ -1,5 +1,11 @@
 <h1>Opdatér dit blogindlæg</h1>
 
+<% if current_user.admin? %>
+	<div class="alert alert-warning">
+		<STRONG>Administrator-påmindelse!</STRONG> Husk at kommentere i posten og bemærke den er ændret af en admin, samt årsag.
+	</div>
+<% end %>
+
 <%= render 'form' %>
 
 <%= link_to 'Show', @blog_post %> |

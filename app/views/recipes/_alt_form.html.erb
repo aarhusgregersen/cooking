@@ -7,7 +7,7 @@
         <%= f.file_field :recipe_image %>
 
         <% if current_user.admin? %>
-          <%= button_to 'Slet billede?', destroy_image, class:"btn btn-warning" %>
+          <%= button_to 'Slet billede?', class:"btn btn-warning" %>
         <% end %>
       </div>
 

@@ -1,4 +1,4 @@
 <% if current_user.admin? %>
-  <%= button_to 'Rediger', edit_blog_post_path(blog_post), class:"btn btn-warning" %>
+  <%= button_to 'Rediger', edit_blog_post_path(@blog_post), class:"btn btn-warning" %>
   <%= button_to 'Slet post', blog_post, method: :delete, data: { confirm: 'Er du sikker?' }, class:"btn btn-danger" %>
 <% end %>

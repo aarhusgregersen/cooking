@@ -6,7 +6,12 @@
   <div class="col-sm-6 col-xs-12">
     <h2><%= link_to blog_post.title, blog_post %></h2>
     <p><%= truncate(blog_post.post, :length => 1200) %></p>
-    <% #render 'layouts/admin' %>
+
+    <% if current_user.admin? %>
+      <%= button_to 'Rediger', edit_blog_post_path(blog_post), class:"btn btn-warning admin-button", method: :get %>
+      <%= button_to 'Slet post', blog_post, method: :delete, data: { confirm: 'Er du sikker?' }, class:"btn btn-danger admin-button" %>
+    <% end %>
+
     </div>
   <% end %>
 </div>

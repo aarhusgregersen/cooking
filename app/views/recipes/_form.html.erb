@@ -1,5 +1,5 @@
 <% if @recipe.errors.any? %>
-<div id="error_explanation">
+<div id="error_explanation" class="alert alert-danger">
   <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
   <ul>
     <% @recipe.errors.full_messages.each do |message| %>
@@ -14,27 +14,33 @@
   <div class="actions">
       <%= f.label "Upload billede af retten" %>
       <%= f.file_field :recipe_image %>
+      <br>
 
       <% if current_user.admin? %>
       <%= button_to 'Slet billede?', '#', class:"btn btn-warning" %>
       <% end %>
 
-      <br>
-
-
+      <div class="field">
       <%= f.label :title %> <br>
       <%= f.text_field :title %>
-      <br>
+      </div>
+
+      <div class="field">
       <%= f.label "Beskrivelse" %> <br>
       <%= f.text_field :description%>
-      <br>
+      </div>
+
+      <div class="field">
       <%= f.label "Ingredienser" %> <br>
       <%= f.text_field :ingredients%>
-      <br>
-      <%= f.label :instructions, "Fremgangsmåde" %> <br>
-      <%= f.text_field :instructions%>
+      </div>
 
-    <br>
+      <div class="field">
+      <%= f.label :instructions, "Fremgangsmåde" %>
+      <%= f.text_field :instructions%>
+      </div>
+
+
     <br>
     <%= f.submit class: 'btn btn-success' %>
   </div>
