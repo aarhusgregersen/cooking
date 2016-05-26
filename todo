@@ -52,13 +52,14 @@ Tasks:
 	- Make destroy image button work
 - Add an admin √
 	- See devise guide for how to add admins. √
-- Add an admin through seeds
-- Seed database
-	- Might use faker gem for this
-- Create a related table authorDetails
+- Add an admin through seeds √
+- Seed database with faker gem
+	- A few posts
+	- A few starting recipes
+	- Admin user
+- Create a related table authorDetails (Effectively profiles for devise)
 - Style front(blog_posts) page
 - Style 'show user' site
-- Add to author.rb has_one author detail with destroy dependency
 - Remove edit link in title for blog and recipe
 	- Check for admin status to allow edits
 	- if blog post / recipe OWNED BY current_user = allow edit
@@ -70,7 +71,9 @@ Tasks:
 	- use balloon.css to show hover notification that says to register
 - Set up omniauth login for facebook
 - Set up up/down vote system like on youtube (thumbs up/down icons)
-
+- Add reference to blog posts
+- Add reference to recipes
+-
 
 Goals:
 - Have users and admins user groups

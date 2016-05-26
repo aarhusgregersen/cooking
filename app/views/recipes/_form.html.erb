@@ -15,7 +15,7 @@
       <%= f.label "Upload billede af retten" %>
       <%= f.file_field :recipe_image %>
 
-      <% if user_signed_in? %>
+      <% if current_user.admin? %>
       <%= button_to 'Slet billede?', '#', class:"btn btn-warning" %>
       <% end %>
 

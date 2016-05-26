@@ -1,0 +1,23 @@
+  <%= f.fields_for :profile do |p| %>
+
+    <div class="field">
+      <%= p.label :fname %>
+      <%= p.text_field :fname %>
+    </div>
+
+    <div class="field">
+      <%= p.label :lname %>
+      <%= p.text_field :lname %>
+    </div>
+
+    <div class="field">
+      <%= p.label :avatar %>
+      <%= p.file_field :avatar %>
+    </div>
+
+    <div class="field">
+      <%= p.label :about %>
+      <%= p.text_field :about %>
+    </div>
+
+  <% end %>

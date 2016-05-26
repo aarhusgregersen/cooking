@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
   <% @blog_posts.each do |blog_post| %>
-  <div class="col-sm-12">
+  <div class="col-sm-6 col-xs-12">
     <h2><%= link_to blog_post.title, blog_post %></h2>
     <p><%= truncate(blog_post.post, :length => 1200) %></p>
     <% #render 'layouts/admin' %>

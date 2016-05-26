@@ -1,23 +1,38 @@
-    <div class="col-md-6">
-      <%= f.label "Upload billede af retten" %>
-      <%= f.file_field :recipe_image %>
+    <%= form_for @recipe do |f| %>
 
-      <% if user_signed_in %>
-      <%= button_to 'Slet billede?', destroy_image, class:"btn btn-warning" %>
 
-      <br>
-      <%= f.label :title %> <br>
-      <%= f.text_area :title, cols: 40, rows: 1 %>
-      <br>
-      <%= f.label "Beskrivelse" %> <br>
-      <%= f.text_area :description, cols: 60, rows: 10 %>
+     <div class="col-md-6">
+       <div class="field">
+        <%= f.label "Upload billede af retten" %>
+        <%= f.file_field :recipe_image %>
+
+        <% if current_user.admin? %>
+          <%= button_to 'Slet billede?', destroy_image, class:"btn btn-warning" %>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :title %> <br>
+        <%= f.text_area :title, cols: 40, rows: 1 %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Beskrivelse" %> <br>
+        <%= f.text_area :description, cols: 60, rows: 10 %>
+      </div>
     </div>
-    <div class="col-md-6">
-      <%= f.label "Ingredienser" %> <br>
-      <%= f.text_area :ingredients, cols: 60, rows: 10 %>
-      <br>
-      <%= f.label :instructions, "Fremgangsmåde" %> <br>
-      <%= f.text_area :instructions, cols: 60, rows: 10 %>
 
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Ingredienser" %> <br>
+        <%= f.text_area :ingredients, cols: 60, rows: 10 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :instructions, "Fremgangsmåde" %> <br>
+        <%= f.text_area :instructions, cols: 60, rows: 10 %>
+      </div>
     </div>
-    <br>
+
+    <%= f.submit class: 'btn btn-success' %>
+    <% end %>
