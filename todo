@@ -1,30 +1,18 @@
 http://stackoverflow.com/questions/27387842/rails-4-how-to-match-routes-in-namespace
 http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
+http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
 
 
-Tasks:
-- Edit and setup views for recipes
-	- Add modal/lightbox popup for images
-		- It is somehow lacking the id of the item it is 'lightboxing'
+-- Tasks:
 - Make it possible to delete images
-	- Set up destroy_image action on edit page
-	- Make destroy image button work
-- Add an admin √
-	- See devise guide for how to add admins. √
-- Add an admin through seeds √
 - Seed database with faker gem
 	- A few posts
 	- A few starting recipes
 	- Admin user
-- Create a related table authorDetails (Effectively profiles for devise)
-- Style front(blog_posts) page
 - Style 'show user' site
 - Remove edit link in title for blog and recipe
 	- Check for admin status to allow edits
 	- if blog post / recipe OWNED BY current_user = allow edit
-- Turn code into HAML
-- Add bootstrap modal as helper
-	- If I'm too dumb to do that, add as partial
 - Instead of not showing "new blog / recipe" when not logged in do:
 	- Show greyed out links
 	- use balloon.css to show hover notification that says to register
@@ -32,10 +20,29 @@ Tasks:
 - Set up up/down vote system like on youtube (thumbs up/down icons)
 - Add reference to blog posts
 - Add reference to recipes
--
 
-Goals:
+
+-- Bugs:
+- Lightbox is somehow lacking the id of the item it is 'lightboxing'
+- Destroy image button not working
+
+
+-- Goals:
 - Have users and admins user groups
 	- People can NOT sign up as admins
 	- Both have to be authenticated and can be remembered (cookie)
--
+- Turn code into HAML
+
+
+-- Extras:
+- Add bootstrap modal as helper
+
+
+-- Completed tasks (In no particular order):
+- Edit and setup views for recipes √
+	- Add modal/lightbox popup for images √
+- Add an admin √
+	- See devise guide for how to add admins. √
+- Add an admin through seeds √
+- Create a related table Profile (Effectively profiles for devise) √
+- Style front(blog_posts) page √
