@@ -66,11 +66,6 @@ class RecipesController < ApplicationController
 
   private
 
-    def destroy_image
-        Recipe.recipe_image.clear
-        Recipe.save
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])

@@ -1,12 +1,17 @@
-== README
 
-= What is it?
-User driven cooking directory site with a blog frontpage
+What is it?
+======
+This page is a user driven cooking directory site with a blog frontpage.
+
+
+
+Technical specifications (mostly used as guidelines for myself when building the app):
+===
 
 - Users can only edit recipes they created (ID validation on relationship)
 - Authentizing with token (logging in/out + unique users)
 	- Use devise gem
-- Users can only destroy their own items 
+- Users can only destroy their own items
 - Admins can edit and destroy anything. Admins will still have to be added at database level (I suppose?!).
 	- Admins have to be a separate devise scaffold => Users + Admins (two different groups)
 - Landing page displays the most recent blog_post from any user
@@ -36,4 +41,4 @@ Features:
     - Ingredients
     - Instructions, ideally suggested as listed bulletpoints
   - The recipe page should contain simple math that can divide how many ingredients you need for x number of people
-  - 
+  -

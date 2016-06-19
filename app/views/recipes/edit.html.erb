@@ -1,10 +1,7 @@
 <h1>Editing Recipe</h1>
 
-<%= render 'form' %>
+<%= render 'alt_form' %>
 
 <%= link_to 'Fortryd', recipes_path %>
 
-<% if current_user.admin? %>
-	<%= button_to 'Delete?', @recipe, :method => :delete, data: {:confirm => "Er du sikker på du vil slette opskriften?"} %>
-<% end %>
 

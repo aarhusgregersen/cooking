@@ -5,6 +5,7 @@ http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 
 
 -- Tasks:
+- Add localization
 - Make it possible to delete images
 - Style 'show user' site
 - Remove edit link in title for blog and recipe
@@ -20,6 +21,7 @@ http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 - Add likes to blog posts
 - Add likes to recipes
 - Set up a "sort by best" view for recipes that sort by likes
+- Change text on submit buttons in forms
 
 
 -- Bugs:

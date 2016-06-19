@@ -1,15 +1,13 @@
     <%= form_for @recipe do |f| %>
 
-
      <div class="col-md-6">
        <div class="field">
         <%= f.label "Upload billede af retten" %>
         <%= f.file_field :recipe_image %>
 
         <% if current_user.admin? %>
-          <% unless f.new_record? || !f.recipe_image %>
-            <%= f.check_box :image_delete, :label => "Slet billede?" %>
-          <% end %>
+          <%= f.label "Slet billede?" %>
+          <%= f.check_box :image_delete %>
         <% end %>
       </div>
 
@@ -37,4 +35,8 @@
     </div>
 
     <%= f.submit class: 'btn btn-success' %>
+    <% if current_user.admin? %>
+      <%= button_to 'Slet?', recipe_path, :method => :delete, data: {:confirm => "Er du sikker på du vil slette opskriften?"}, class: "btn btn-danger" %>
+    <% end %>
+
     <% end %>
