@@ -16,10 +16,7 @@
       <%= f.file_field :recipe_image %>
       <br>
 
-      <% if current_user.admin? %>
-      <%= f.label "Slet billede?" %>
-      <%= f.check_box :image_delete %>
-      <% end %>
+      
 
       <div class="field">
       <%= f.label :title %> <br>
@@ -37,7 +34,7 @@
       </div>
 
       <div class="field">
-      <%= f.label :instructions, "Fremgangsmåde" %>
+      <%= f.label :instructions, "Fremgangsmåde" %> <br>
       <%= f.text_field :instructions%>
       </div>
 

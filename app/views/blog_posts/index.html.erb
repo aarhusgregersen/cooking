@@ -1,5 +1,4 @@
-
-<%= render 'carousel' %>
+<%= carousel_for(["basket_of_fruit.jpg", "icecream.jpg", "food-01.jpg"]) %>
 
 <div class="container-fluid">
   <% @blog_posts.each do |blog_post| %>
@@ -7,10 +6,7 @@
     <h2><%= link_to blog_post.title, blog_post %></h2>
     <p><%= truncate(blog_post.post, :length => 1200) %></p>
 
-    <% if current_user.admin? %>
-      <%= button_to 'Rediger', edit_blog_post_path(blog_post), class:"btn btn-warning admin-button", method: :get %>
-      <%= button_to 'Slet post', blog_post, method: :delete, data: { confirm: 'Er du sikker?' }, class:"btn btn-danger admin-button" %>
-    <% end %>
+    
 
     </div>
   <% end %>
