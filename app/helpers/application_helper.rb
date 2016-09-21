@@ -13,4 +13,12 @@ module ApplicationHelper
     end
     nil
   end
+
+  def lightbox(path, footer="")
+    link_to image_tag(path.recipe_image.url :medium_large), path.recipe_image.url, data: 
+  { toggle: "lightbox", 
+    title: "#{path.title}", 
+    footer: footer 
+  } 
+  end
 end
