@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'passenger'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use SCSS for stylesheets
@@ -24,14 +24,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
-gem 'lightbox2-rails'
 gem 'paperclip'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'haml'
 gem 'faker'
 # gem 'friendlyID'
-# gem 'lightbox-bootstrap-rails'
+gem 'lightbox-bootstrap-rails'
 # gem 'cancan'
 
 # Use Unicorn as the app server
