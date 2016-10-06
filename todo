@@ -9,6 +9,9 @@ Has to be run with ruby 2.1
 
 -- Tasks:
 - Add localization
+- Make it recipe-centered:
+	- Add categories
+	- 
 - Make it possible to delete images
 - Style 'show user' site
 - Remove edit link in title for blog and recipe
