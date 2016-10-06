@@ -3,6 +3,9 @@ http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
 http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
 http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 
+Has to be run with ruby 2.1
+(It broke for me, running 2.3)
+
 
 -- Tasks:
 - Add localization
@@ -25,7 +28,6 @@ http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 
 
 -- Bugs:
-- Lightbox is somehow lacking the id of the item it is 'lightboxing'
 - Destroy image button not working
 
 
@@ -34,10 +36,6 @@ http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 	- People can NOT sign up as admins
 	- Both have to be authenticated and can be remembered (cookie)
 - Turn code into HAML
-
-
--- Extras:
-- Add bootstrap modal as helper
 
 
 -- Completed tasks (In no particular order):
