@@ -1,30 +1,30 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Forside", root_url, class: 'navbar-brand' %>
+      <%= link_to t('frontpage'), root_url, class: 'navbar-brand' %>
     </div>
     <nav>
     <ul class="nav navbar-nav">
-      <li><%= link_to "Opskrifter", recipes_path %></li>
+      <li><%= link_to t('recipes'), recipes_path %></li>
     </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li><%= link_to "Nyt Blogindlæg", new_blog_post_path %></li>
-        <li><%= link_to "Ny opskrift", new_recipe_path %> </li>
+        <li><%= link_to t('new_blogpost'), new_blog_post_path %></li>
+        <li><%= link_to t('new_recipe'), new_recipe_path %> </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Konto
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><%= t('account') %>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Profil', '#' %></li>
-            <li><%= link_to 'Indstillinger', edit_user_registration_path %></li>
+            <li><%= link_to t('profile'), '#' %></li>
+            <li><%= link_to t('settings'), edit_user_registration_path %></li>
             <li class="divider"></li>
-            <li><%= link_to 'Log Ud', destroy_user_session_path, method: 'delete' %>
+            <li><%= link_to t('logout'), destroy_user_session_path, method: 'delete' %>
             </li>
           </ul>
         </li>
         <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to t('login'), new_user_session_path %></li>
         <% end %>
       </ul>
     </nav>

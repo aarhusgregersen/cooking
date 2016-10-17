@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#gem 'passenger'
+gem 'passenger'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -31,11 +31,11 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'haml'
 gem 'faker'
+gem 'rails-i18n', '~> 4.0.0'
 # gem 'friendlyID'
 gem 'lightbox-bootstrap-rails'
 # gem 'cancan'
-# Use Unicorn as the app server
-# gem 'unicorn'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
