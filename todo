@@ -3,8 +3,7 @@ http://stackoverflow.com/questions/5160021/rails-namespace-vs-nested-resource
 http://stackoverflow.com/questions/4307743/profile-model-for-devise-users
 http://stackoverflow.com/questions/24221367/like-button-ajax-in-ruby-on-rails
 
-Has to be run with ruby 2.1
-(It broke for me, running 2.3)
+
 
 
 -- Tasks:
@@ -28,6 +27,8 @@ Has to be run with ruby 2.1
 - Add likes to recipes
 - Set up a "sort by best" view for recipes that sort by likes
 - Change text on submit buttons in forms
+- Sockets.io plugin for chat
+- Plugin (if any) for fb likes for reach recipe. Alternatively a db storage simple edition
 
 
 -- Bugs:

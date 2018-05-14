@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1"
 
 gem 'passenger'
 # Use sqlite3 as the database for Active Record
